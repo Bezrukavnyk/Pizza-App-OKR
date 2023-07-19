@@ -1,0 +1,24 @@
+import {StatusBar, StyleSheet} from 'react-native';
+
+export const listPizzaStyles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 15,
+    paddingTop: StatusBar.currentHeight || 15,
+  },
+  productWrap: {
+    display: 'flex',
+    marginBottom: 16,
+  },
+  inputSearch: {
+    fontSize: 16,
+    marginVertical: 16,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    width: '100%',
+    borderRadius: 8,
+    borderWidth: 1,
+  },
+});
