@@ -7,14 +7,14 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { addToBasket, useAppDispatch, useAppSelector } from "utils/store";
+import { RootStackParamList } from "utils/types";
 import { pizzaArrayMockData } from "utils/constants";
 import { MainActionBtn } from "controls";
 
 import { pizzaItemStyles } from "./styles";
-import { RootStackParamList } from "utils/types";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 export type NavigationProps<RouteName extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, RouteName>;
