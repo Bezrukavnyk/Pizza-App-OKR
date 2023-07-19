@@ -1,16 +1,16 @@
-import {FC} from 'react';
-import {Image, Text, TouchableOpacity} from 'react-native';
+import { FC } from "react";
+import { Image, Text, TouchableOpacity } from "react-native";
 
-import {PizzaListItem} from '../../utils/types';
+import { PizzaListItem } from "utils/types";
 
-import {cardItemStyles} from './utils/styles';
+import { cardItemStyles } from "./utils/styles";
 
 type Props = {
   pizzaInfo: PizzaListItem;
   onPress: () => void;
 };
 
-const PizzaCard: FC<Props> = ({pizzaInfo, onPress}) => {
+const PizzaCard: FC<Props> = ({ pizzaInfo, onPress }) => {
   return (
     <TouchableOpacity style={cardItemStyles.btn} onPress={onPress}>
       <Image

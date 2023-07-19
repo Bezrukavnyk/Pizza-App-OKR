@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -6,20 +6,32 @@ import {
   Text,
   Image,
   TouchableOpacity,
-} from 'react-native';
+} from "react-native";
 
-import {addToBasket, useAppDispatch, useAppSelector} from '../../utils/store';
-import {NavigationProps} from '../../utils/types';
-import {pizzaArrayMockData} from '../../utils/constants';
-import {MainActionBtn} from '../../controls';
+import { addToBasket, useAppDispatch, useAppSelector } from "utils/store";
+import { pizzaArrayMockData } from "utils/constants";
+import { MainActionBtn } from "controls";
 
-import {pizzaItemStyles} from './styles';
+import { pizzaItemStyles } from "./styles";
+import { RootStackParamList } from "utils/types";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-const PizzaDetails = ({route, navigation}: NavigationProps): JSX.Element => {
-  const {id} = route.params;
+export type NavigationProps<RouteName extends keyof RootStackParamList> =
+  NativeStackScreenProps<RootStackParamList, RouteName>;
+
+const PizzaDetails = ({
+  route,
+  navigation,
+}: {
+  navigation: NavigationProps<"Details">["navigation"];
+  route: NavigationProps<"Details">["route"];
+}): JSX.Element => {
+  const { id } = route.params;
   const dispatch = useAppDispatch();
-  const totalPizzaCount = useAppSelector(store => store.basket.totalPizzaCount);
-  const pizzaInfo = pizzaArrayMockData.find(pizza => pizza.id === id);
+  const totalPizzaCount = useAppSelector(
+    (store) => store.basket.totalPizzaCount
+  );
+  const pizzaInfo = pizzaArrayMockData.find((pizza) => pizza.id === id);
 
   const handleAddPizza = (): void => {
     dispatch(addToBasket(id));
@@ -29,15 +41,15 @@ const PizzaDetails = ({route, navigation}: NavigationProps): JSX.Element => {
     <SafeAreaView style={pizzaItemStyles.wrapper}>
       {!!totalPizzaCount && (
         <TouchableOpacity
-          onPress={() => navigation.navigate('Basket')}
-          style={pizzaItemStyles.basketBtn}>
+          onPress={() => navigation.navigate("Basket")}
+          style={pizzaItemStyles.basketBtn}
+        >
           <Text
-            style={
-              pizzaItemStyles.btnText
-            }>{`Basket: ${totalPizzaCount}`}</Text>
+            style={pizzaItemStyles.btnText}
+          >{`Basket: ${totalPizzaCount}`}</Text>
         </TouchableOpacity>
       )}
-      <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
+      <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
       <ScrollView style={pizzaItemStyles.container}>
         <Image
           style={pizzaItemStyles.mainImg}

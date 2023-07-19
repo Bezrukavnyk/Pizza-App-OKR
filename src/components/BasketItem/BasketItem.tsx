@@ -1,24 +1,24 @@
-import {FC} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import { FC } from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
-import {pizzaArrayMockData} from '../../utils/constants';
+import { pizzaArrayMockData } from "utils/constants";
 import {
   addToBasket,
   removeFromBasket,
   useAppDispatch,
   useAppSelector,
-} from '../../utils/store';
+} from "utils/store";
 
-import {basketItemStyles} from '../HeaderList/styles';
+import { basketItemStyles } from "../HeaderList/styles";
 
 type Props = {
   id: number;
 };
 
-const BasketItem: FC<Props> = ({id}) => {
+const BasketItem: FC<Props> = ({ id }) => {
   const dispatch = useAppDispatch();
-  const pizzaInfo = pizzaArrayMockData.find(pizza => pizza.id === id);
-  const orderInfo = useAppSelector(store => store.basket.orderPizzaIds);
+  const pizzaInfo = pizzaArrayMockData.find((pizza) => pizza.id === id);
+  const orderInfo = useAppSelector((store) => store.basket.orderPizzaIds);
 
   const handleAddPizza = (): void => {
     dispatch(addToBasket(id));
@@ -46,12 +46,14 @@ const BasketItem: FC<Props> = ({id}) => {
       <View style={basketItemStyles.countInfo}>
         <TouchableOpacity
           onPress={handleRemovePizza}
-          style={basketItemStyles.btnCount}>
+          style={basketItemStyles.btnCount}
+        >
           <Text style={basketItemStyles.btnCountText}>-</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={basketItemStyles.btnCount}
-          onPress={handleAddPizza}>
+          onPress={handleAddPizza}
+        >
           <Text style={basketItemStyles.btnCountText}>+</Text>
         </TouchableOpacity>
       </View>
