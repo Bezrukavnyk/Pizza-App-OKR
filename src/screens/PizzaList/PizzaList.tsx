@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 import { NavigationProps } from "utils/types";
-import { HeaderList, PizzaCard } from "components";
+import { HeaderList, CardList } from "components";
 import { MainActionBtn } from "controls";
 
 import { usePizzaList } from "./utils/usePizzaList";
@@ -19,7 +19,7 @@ const PizzaList = ({ navigation }: NavigationProps): JSX.Element => {
     usePizzaList();
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
       <View style={listPizzaStyles.container}>
         <HeaderList title="Pizza shop" subTitle="Description of pizza shop" />
@@ -35,7 +35,7 @@ const PizzaList = ({ navigation }: NavigationProps): JSX.Element => {
           style={listPizzaStyles.productWrap}
           data={pizzaArray}
           renderItem={({ item }) => (
-            <PizzaCard
+            <CardList
               pizzaInfo={item}
               onPress={() => navigation.navigate("Details", { id: item.id })}
             />
@@ -48,7 +48,7 @@ const PizzaList = ({ navigation }: NavigationProps): JSX.Element => {
           onPress={() => navigation.navigate("Basket")}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

@@ -10,7 +10,7 @@ type Props = {
   onPress: () => void;
 };
 
-const PizzaCard: FC<Props> = ({ pizzaInfo, onPress }) => {
+const CardList: FC<Props> = ({ pizzaInfo, onPress }) => {
   return (
     <TouchableOpacity style={cardItemStyles.btn} onPress={onPress}>
       <Image
@@ -25,4 +25,4 @@ const PizzaCard: FC<Props> = ({ pizzaInfo, onPress }) => {
   );
 };
 
-export default PizzaCard;
+export default CardList;

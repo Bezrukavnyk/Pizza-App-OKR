@@ -1,5 +1,5 @@
-import BasketItem from './BasketItem/BasketItem';
-import HeaderList from './HeaderList/HeaderList';
-import PizzaCard from './PizzaCard/PizzaCard';
+import CardBasket from "./CardBasket/CardBasket";
+import HeaderList from "./HeaderList/HeaderList";
+import CardList from "./CardList/CardList";
 
-export {BasketItem, HeaderList, PizzaCard};
+export { CardBasket, HeaderList, CardList };

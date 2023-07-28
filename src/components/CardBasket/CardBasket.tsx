@@ -15,7 +15,7 @@ type Props = {
   id: number;
 };
 
-const BasketItem: FC<Props> = ({ id }) => {
+const CardBasket: FC<Props> = ({ id }) => {
   const dispatch = useAppDispatch();
   const pizzaInfo = pizzaArrayMockData.find((pizza) => pizza.id === id);
   const orderInfo = useAppSelector((store) => store.basket.orderPizzaIds);
@@ -61,4 +61,4 @@ const BasketItem: FC<Props> = ({ id }) => {
   );
 };
 
-export default BasketItem;
+export default CardBasket;

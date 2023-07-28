@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  SafeAreaView,
+  View,
   ScrollView,
   StatusBar,
   Text,
@@ -38,7 +38,7 @@ const PizzaDetails = ({
   };
 
   return (
-    <SafeAreaView style={pizzaItemStyles.wrapper}>
+    <View style={pizzaItemStyles.wrapper}>
       {!!totalPizzaCount && (
         <TouchableOpacity
           onPress={() => navigation.navigate("Basket")}
@@ -64,7 +64,7 @@ const PizzaDetails = ({
         </Text>
       </ScrollView>
       <MainActionBtn title="Add to Basket" onPress={handleAddPizza} />
-    </SafeAreaView>
+    </View>
   );
 };
 

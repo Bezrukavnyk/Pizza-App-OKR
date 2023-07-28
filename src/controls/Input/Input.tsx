@@ -1,8 +1,13 @@
-import {FC} from 'react';
-import {Text, TextInput, View} from 'react-native';
-import {Control, FieldValues, useController} from 'react-hook-form';
+import { FC } from "react";
+import { Text, TextInput, View } from "react-native";
+import {
+  Control,
+  FieldValues,
+  useController,
+  useFormState,
+} from "react-hook-form";
 
-import {inputStyles} from './styles';
+import { inputStyles } from "./styles";
 
 type Props = {
   title: string;
@@ -10,8 +15,16 @@ type Props = {
   control: Control<FieldValues, any>;
 };
 
-const Input: FC<Props> = ({control, title, name}) => {
-  const {field} = useController({control, defaultValue: '', name});
+const Input: FC<Props> = ({ control, title, name }) => {
+  const {
+    field,
+    formState: { errors },
+  } = useController({
+    control,
+    defaultValue: "",
+    name,
+    rules: { required: true },
+  });
 
   return (
     <View style={inputStyles.inputWrap}>
@@ -21,6 +34,7 @@ const Input: FC<Props> = ({control, title, name}) => {
         value={field.value}
         onChangeText={field.onChange}
       />
+      {errors[name] && <Text style={{ color: "red" }}>Required field</Text>}
     </View>
   );
 };
