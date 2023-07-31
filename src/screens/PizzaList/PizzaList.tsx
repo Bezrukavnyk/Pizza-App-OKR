@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FlatList,
-  StatusBar,
-  TextInput,
-  View,
-  SafeAreaView,
-} from "react-native";
+import { FlatList, TextInput, View } from "react-native";
 
 import { NavigationProps } from "utils/types";
 import { HeaderList, CardList } from "components";
@@ -20,7 +14,6 @@ const PizzaList = ({ navigation }: NavigationProps): JSX.Element => {
 
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
       <View style={listPizzaStyles.container}>
         <HeaderList title="Pizza shop" subTitle="Description of pizza shop" />
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, StatusBar, Text } from "react-native";
+import { FlatList, View, Text } from "react-native";
 
 import { NavigationProps } from "utils/types";
 import { CardBasket } from "components";
@@ -13,7 +13,6 @@ const Basket = ({ navigation }: NavigationProps): JSX.Element => {
 
   return (
     <View style={basketStyles.wrapper}>
-      <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
       {totalPizzaCount ? (
         <FlatList
           style={basketStyles.container}

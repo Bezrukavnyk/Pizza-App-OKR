@@ -1,11 +1,10 @@
 import React from "react";
 import {
   View,
-  ScrollView,
-  StatusBar,
   Text,
   Image,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
@@ -49,8 +48,7 @@ const PizzaDetails = ({
           >{`Basket: ${totalPizzaCount}`}</Text>
         </TouchableOpacity>
       )}
-      <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
-      <ScrollView style={pizzaItemStyles.container}>
+      <KeyboardAvoidingView style={pizzaItemStyles.container}>
         <Image
           style={pizzaItemStyles.mainImg}
           source={{
@@ -62,7 +60,7 @@ const PizzaDetails = ({
         <Text style={pizzaItemStyles.description}>
           {pizzaInfo?.description}
         </Text>
-      </ScrollView>
+      </KeyboardAvoidingView>
       <MainActionBtn title="Add to Basket" onPress={handleAddPizza} />
     </View>
   );

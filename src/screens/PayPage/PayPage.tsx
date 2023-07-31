@@ -17,8 +17,7 @@ const PayPage = (): JSX.Element => {
 
   return (
     <View style={payPageStyles.wrapper}>
-      <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
-      <ScrollView style={payPageStyles.container}>
+      <ScrollView alwaysBounceVertical={false} style={payPageStyles.container}>
         <Input title="Full Name" name="full_name" control={control} />
         <Input title="Phone" name="phone" control={control} />
         <Input title="Address" name="address" control={control} />
