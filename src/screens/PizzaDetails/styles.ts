@@ -7,7 +7,6 @@ export const pizzaItemStyles = StyleSheet.create({
     backgroundColor: "#FFF",
     paddingHorizontal: 15,
     paddingTop: StatusBar.currentHeight || 15,
-    paddingBottom: 20,
   },
   title: {
     fontSize: 24,
@@ -39,6 +38,7 @@ export const pizzaItemStyles = StyleSheet.create({
     flex: 1,
     position: "relative",
     backgroundColor: "#fff",
+    paddingBottom: 20,
   },
   basketBtn: {
     position: "absolute",

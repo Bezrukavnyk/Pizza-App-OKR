@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, Text } from "react-native";
+import { FlatList, View, Text, SafeAreaView } from "react-native";
 
 import { NavigationProps } from "utils/types";
 import { CardBasket } from "components";
@@ -12,7 +12,7 @@ const Basket = ({ navigation }: NavigationProps): JSX.Element => {
   const { orderIdsPizza, buyMyOrder, totalPizzaCount } = useBasket(navigation);
 
   return (
-    <View style={basketStyles.wrapper}>
+    <SafeAreaView style={basketStyles.wrapper}>
       {totalPizzaCount ? (
         <FlatList
           style={basketStyles.container}
@@ -26,7 +26,7 @@ const Basket = ({ navigation }: NavigationProps): JSX.Element => {
         </View>
       )}
       <MainActionBtn title="Go to pay" onPress={buyMyOrder} />
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, View, ScrollView, StatusBar } from "react-native";
+import { Alert, View, ScrollView, StatusBar, SafeAreaView } from "react-native";
 import { FieldValues, useForm } from "react-hook-form";
 
 import { Input, MainActionBtn } from "controls";
@@ -16,14 +16,14 @@ const PayPage = (): JSX.Element => {
   };
 
   return (
-    <View style={payPageStyles.wrapper}>
+    <SafeAreaView style={payPageStyles.wrapper}>
       <ScrollView alwaysBounceVertical={false} style={payPageStyles.container}>
         <Input title="Full Name" name="full_name" control={control} />
         <Input title="Phone" name="phone" control={control} />
         <Input title="Address" name="address" control={control} />
       </ScrollView>
       <MainActionBtn title="Buy" onPress={handleSubmit(onSubmit)} />
-    </View>
+    </SafeAreaView>
   );
 };
 

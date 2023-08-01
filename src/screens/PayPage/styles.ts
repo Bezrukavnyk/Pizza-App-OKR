@@ -7,7 +7,7 @@ export const payPageStyles = StyleSheet.create({
     backgroundColor: "#FFF",
     paddingHorizontal: 15,
     paddingTop: StatusBar.currentHeight || 15,
-    paddingBottom: 20,
+
     width: "100%",
   },
   wrapper: {

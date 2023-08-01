@@ -6,7 +6,7 @@ export const listPizzaStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFF",
     paddingHorizontal: 15,
-    paddingTop: StatusBar.currentHeight || 15,
+    paddingTop: StatusBar.currentHeight,
   },
   productWrap: {
     display: "flex",

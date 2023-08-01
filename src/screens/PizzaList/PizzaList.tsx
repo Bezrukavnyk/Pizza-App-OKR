@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, TextInput, View } from "react-native";
+import { FlatList, SafeAreaView, TextInput, View } from "react-native";
 
 import { NavigationProps } from "utils/types";
 import { HeaderList, CardList } from "components";
@@ -13,7 +13,7 @@ const PizzaList = ({ navigation }: NavigationProps): JSX.Element => {
     usePizzaList();
 
   return (
-    <View style={{ flex: 1 }}>
+    <SafeAreaView style={listPizzaStyles.container}>
       <View style={listPizzaStyles.container}>
         <HeaderList title="Pizza shop" subTitle="Description of pizza shop" />
 
@@ -41,7 +41,7 @@ const PizzaList = ({ navigation }: NavigationProps): JSX.Element => {
           onPress={() => navigation.navigate("Basket")}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
